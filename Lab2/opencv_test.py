@@ -2,7 +2,8 @@
 import cv2
 import time
 
-cap=cv2.VideoCapture("udp://192.168.10.1:?")
+cap=cv2.VideoCapture("udp://192.168.10.1:11111")
+#cap=cv2.VideoCapture(0)
 
 while True:
 	isFrame, frame=cap.read()

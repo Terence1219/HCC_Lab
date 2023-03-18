@@ -11,7 +11,7 @@ import sys
 import time
 
 
-host = ''
+host = '192.168.183.132'
 port = 9000
 locaddr = (host,port) 
 
@@ -21,12 +21,12 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(locaddr)
 
 #please fill UAV IP address
-tello_address1 = ('???', 8889)
-tello_address2 = ('???', 8889)
+tello_address1 = ('192.168.183.230', 8889)#TD8
+tello_address2 = ('192.168.183.39', 8889)#HCC02
 
-message1=["command", "takeoff",  "forward 200", "land"]
-message2=["command", "takeoff",  "forward 200", "land"]
-delay=[3,8,8,2]
+message1=["command","battery?", "takeoff", "forward 170","up 10","left 70","forward 120", "land","end"]
+message2=["command","battery?", "takeoff", "forward 170","down 20","left 70","forward 110", "land","end"]
+delay=[3,3,10,5,5,5,5,2,2]
 
 def recv():
     count = 0
